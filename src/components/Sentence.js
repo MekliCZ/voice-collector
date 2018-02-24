@@ -9,7 +9,7 @@ export default class Sentence extends Component {
         this.state = {
             submit: true,
             value: props.value,
-        }
+        };
 
         this.changeSubmit = this.changeSubmit.bind(this);
     }

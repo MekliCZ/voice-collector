@@ -1,7 +1,12 @@
+header {
+    padding: 10px 5%;
+    box-sizing: border-box;
+}
+
 .logo {
     font-family: 'Zilla Slab Highlight', cursive;
     font-weight: 700;
-    font-size: 28px;
+    font-size: 22px;
 }
 
 .logo-suffix {
@@ -9,13 +14,15 @@
 }
 
 h1 {
-    margin: 10px 0;
+    margin: 0 0;
     font-weight: 500;
 }
 
 .h1-small {
     font-size: 0.5em;
     font-weight: 400;
+    font-family: 'Zilla Slab', sans-serif;
+    margin-right: 6px;
 }
 
 .App {
