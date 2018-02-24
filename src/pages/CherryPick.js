@@ -57,6 +57,7 @@ export default class CherryPick extends Component {
     render() {
         return(
             <div className="pageContent">
+                <p>This tool will extract sentences appropriate for Common Voice from longer text, like book or article.</p>
                 <form onSubmit={this.handleSubmit}>
                     <textarea rows="10" name="text" placeholder="Text to cherry pick" onChange={(event) => {
                         this.setState({text: event.target.value});
@@ -66,6 +67,7 @@ export default class CherryPick extends Component {
                     }}/>
                     <input type="submit" value="Cherry pick"/>
                 </form>
+                <p>Please, check if extracted sentences are OK. If they are not, you can either edit it just by clicking on it, or click on the checkmark which will remove the sentence from submitted sentences.</p>
                 <div className="sentences">
                     {Object.keys(this.state.sentenceObject).map((objectKey, index) => <Sentence change={this.changeSentence} key={index} objectKey={objectKey} value={this.state.sentenceObject[objectKey]['value']}/>)}
                 </div>
