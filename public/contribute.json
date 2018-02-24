@@ -1,0 +1,13 @@
+{
+	"name": "Common Voice Sentence Collector",
+	"description": "Website for collecting sentences for Common Voice project",
+	"repository": {
+		"url": "https://github.com/MekliCZ/voice-collector",
+		"license": "MPL2"
+	},
+	"keywords": [
+		"React",
+		"JavaScript",
+		"HTML"
+	]
+}
