@@ -8,6 +8,20 @@
 		"tests": "https://jenkins.michalvasicek.cz/job/voice-collector/",
 		"clone": "https://github.com/MekliCZ/voice-collector.git"
 	},
+	"participate": {
+		"docs": "https://github.com/MekliCZ/voice-collector",
+		"irc": "irc://irc.mozilla.org/#l10n",
+		"irc-contacts": [
+			"MekliCZ"
+		]
+	},
+	"bugs": {
+		"list": "https://github.com/MekliCZ/voice-collector/issues",
+		"report": "https://github.com/MekliCZ/voice-collector/issues/new"
+	},
+	"urls": {
+		"prod": "https://voice.mozilla.cz"
+	},
 	"keywords": [
 		"react",
 		"javascript",
