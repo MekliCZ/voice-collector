@@ -9,7 +9,7 @@ class App extends Component {
     render() {
         return (
             <div className="App">
-                <h1>Common Voice Collector</h1>
+                <h1>Common Voice <span className="h1-small">Sentence Collector</span></h1>
                 <div className="logo">mozilla<span className="logo-suffix">.cz</span></div>
                 <Navigation/>
                 <Route path="/submit" component={Submit}/>
