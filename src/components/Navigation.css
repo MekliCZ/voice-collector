@@ -1,0 +1,29 @@
+nav {
+    display: flex;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    margin: 10px 0;
+}
+
+a {
+    display: block;
+    width: 100%;
+    text-align: center;
+    color: black;
+    text-decoration: none;
+    padding: 10px 0;
+    border-right: 1px solid black;
+}
+
+a:last-child {
+    border-right: none;
+}
+
+a.active {
+    background: black;
+    color: white;
+}
+
+.link-login {
+    /* TODO: make width=content */
+}
