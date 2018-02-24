@@ -73,6 +73,7 @@ module.exports = {
             path
                 .relative(paths.appSrc, info.absoluteResourcePath)
                 .replace(/\\/g, '/'),
+        crossOriginLoading: 'anonymous',
     },
     resolve: {
         // This allows you to set a fallback for where Webpack should look for modules.
@@ -330,6 +331,10 @@ module.exports = {
         // https://github.com/jmblog/how-to-optimize-momentjs-with-webpack
         // You can remove this if you don't use Moment.js:
         new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
+        new SriPlugin({
+            hashFuncNames: ['sha384'],
+            enabled: process.env.NODE_ENV === 'production',
+        }),
     ],
     // Some libraries import Node modules but don't use them in the browser.
     // Tell Webpack to provide empty mocks for them so importing them works.
