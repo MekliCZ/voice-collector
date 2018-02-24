@@ -1,0 +1,44 @@
+.sentences {
+    max-width: 600px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.sentence {
+    display: flex;
+    margin: 4px 0;
+    background: black;
+    color: white;
+    height: 50px;
+}
+
+.sentence-status {
+    flex-basis: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 4px solid white;
+    cursor: pointer;
+}
+
+.sentence-status-checked {
+    background: #49a245;
+}
+
+.sentence-status-unchecked {
+    background: #a24134;
+}
+
+input.sentence-value {
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    background: black;
+    color: white;
+    font-family: 'Zilla Slab', sans-serif;
+    font-size: 16px;
+}
+
+input.sentence-value:focus {
+    outline: none;
+}

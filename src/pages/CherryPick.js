@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import XRegExp from 'xregexp';
+import Sentence from '../components/Sentence';
+import './CherryPick.css';
 
 export default class CherryPick extends Component {
     constructor(props) {
@@ -8,9 +9,12 @@ export default class CherryPick extends Component {
         this.state = {
             text: '',
             limit: 100,
+            sentences: [],
+            sentenceObject: {},
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.changeSentence = this.changeSentence.bind(this);
     }
 
     handleSubmit(event) {
@@ -29,7 +33,25 @@ export default class CherryPick extends Component {
             }
         });
         let finalSentences = shortSentences.slice(0, this.state.limit);
-        console.log(finalSentences);
+        let finalSentenceObject = {};
+        finalSentences.forEach((item, key) => {
+            finalSentenceObject[key] = {
+                submit: true,
+                value: item,
+            };
+        });
+        this.setState({
+            sentences: finalSentences,
+            sentenceObject: finalSentenceObject,
+        });
+    }
+
+    changeSentence(key, val) {
+        let sentences = this.state.sentenceObject;
+        sentences[key] = val;
+        this.setState({
+            sentenceObject: sentences,
+        });
     }
 
     render() {
@@ -45,11 +67,9 @@ export default class CherryPick extends Component {
                     <input type="submit" value="Cherry pick"/>
                 </form>
                 <div className="sentences">
-                    <div className="sentence">
-                        <div className="sentence-status sentence-status-pass">k</div>
-                        <div className="sentence-value">Když se to narodilo, bylo to takové bílé nic.</div>
-                    </div>
+                    {Object.keys(this.state.sentenceObject).map((objectKey, index) => <Sentence change={this.changeSentence} key={index} objectKey={objectKey} value={this.state.sentenceObject[objectKey]['value']}/>)}
                 </div>
+                <button className="sentences-submit">Submit</button>
             </div>
         );
     }

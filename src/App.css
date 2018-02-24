@@ -23,7 +23,7 @@ h1 {
     box-sizing: border-box;
 }
 
-textarea, input {
+textarea, input, button {
     width: 90%;
     max-width: 600px;
     margin: 10px auto;
@@ -35,11 +35,11 @@ textarea, input {
     box-sizing: border-box;
 }
 
-textarea:focus, input:focus {
+textarea:focus, input:focus, button:focus {
     outline: none;
 }
 
-input[type="submit"] {
+input[type="submit"], button {
     border: 1px solid black;
     color: black;
     font-family: 'Zilla Slab', sans-serif;
