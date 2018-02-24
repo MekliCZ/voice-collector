@@ -1,0 +1,14 @@
+.logo {
+    font-family: 'Zilla Slab Highlight', cursive;
+    font-weight: 700;
+    font-size: 28px;
+}
+
+.logo-suffix {
+    font-weight: 400;
+}
+
+h1 {
+    margin: 10px 0;
+    font-weight: 500;
+}
