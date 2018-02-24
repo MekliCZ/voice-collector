@@ -3,11 +3,14 @@
 	"description": "Website for collecting sentences for Common Voice project",
 	"repository": {
 		"url": "https://github.com/MekliCZ/voice-collector",
-		"license": "MPL2"
+		"license": "MPL2",
+		"type": "git",
+		"tests": "https://jenkins.michalvasicek.cz/job/voice-collector/",
+		"clone": "https://github.com/MekliCZ/voice-collector.git"
 	},
 	"keywords": [
-		"React",
-		"JavaScript",
-		"HTML"
+		"react",
+		"javascript",
+		"html5"
 	]
 }
