@@ -21,7 +21,7 @@ export default class CherryPick extends Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.changeSentence = this.changeSentence.bind(this);
         this.submitData = this.submitData.bind(this);
-
+        this.updateButton = this.updateButton.bind(this);
 
     }
 
@@ -62,6 +62,18 @@ export default class CherryPick extends Component {
         });
     }
 
+    updateButton(status) {
+        if (status === 'success') {
+            this.setState({
+                submitText: 'Saved, thanks for your contribution!',
+            });
+        } else {
+            this.setState({
+                submitText: 'Unexpected error occured, try again later',
+            });
+        }
+    }
+
     submitData() {
         let toSubmit = [];
         Object.keys(this.state.sentenceObject).map((objectKey, index) => {
@@ -70,7 +82,11 @@ export default class CherryPick extends Component {
                 toSubmit.push(currentSentence.value);
             }
         });
-        fetch('http://localhost:4878/submit', {
+        this.setState({
+            submitDisabled: true,
+        });
+        this.communicator.sendData(toSubmit, this.updateButton);
+        /*fetch('http://localhost:4878/submit', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -95,14 +111,14 @@ export default class CherryPick extends Component {
             this.setState({
                 submitText: 'Unexpected error occured, try again later',
             });
-        });
+        });*/
     }
 
     render() {
         return(
             <div className="pageContent">
                 <p>This tool will extract sentences appropriate for Common Voice from longer text, like book or article.</p>
-                <p>Use only texts that are Public Domain or under license that is compatible with CC-0.</p>
+                <p>Only use texts that are Public Domain or under license that is compatible with CC-0.</p>
                 <form onSubmit={this.handleSubmit}>
                     <textarea rows="10" name="text" placeholder="Text to cherry pick" onChange={(event) => {
                         this.setState({text: event.target.value});
