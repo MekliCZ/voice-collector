@@ -21,7 +21,7 @@ export default class CherryPick extends Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.changeSentence = this.changeSentence.bind(this);
         this.submitData = this.submitData.bind(this);
-
+        this.updateButton = this.updateButton.bind(this);
 
     }
 
@@ -62,6 +62,18 @@ export default class CherryPick extends Component {
         });
     }
 
+    updateButton(status) {
+        if (status === 'success') {
+            this.setState({
+                submitText: 'Saved, thanks for your contribution!',
+            });
+        } else {
+            this.setState({
+                submitText: 'Unexpected error occured, try again later',
+            });
+        }
+    }
+
     submitData() {
         let toSubmit = [];
         Object.keys(this.state.sentenceObject).map((objectKey, index) => {
@@ -70,7 +82,11 @@ export default class CherryPick extends Component {
                 toSubmit.push(currentSentence.value);
             }
         });
-        fetch('http://localhost:4878/submit', {
+        this.setState({
+            submitDisabled: true,
+        });
+        this.communicator.sendData(toSubmit, this.updateButton);
+        /*fetch('http://localhost:4878/submit', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -95,7 +111,7 @@ export default class CherryPick extends Component {
             this.setState({
                 submitText: 'Unexpected error occured, try again later',
             });
-        });
+        });*/
     }
 
     render() {
