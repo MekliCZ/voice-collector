@@ -32,7 +32,7 @@ export default class CherryPick extends Component {
 
     processText() {
         let sentenceRegex = new RegExp(/[^\s][^.!?]+[.!?]+/g);
-        let charRegex = new RegExp(/["()„“‚‘…\d]/g);
+        let charRegex = new RegExp(/["()„”“‚‘…\d]/g);
         let sentences = this.state.text.match(sentenceRegex);
         let shortSentences = [];
         sentences.forEach((item) => {
