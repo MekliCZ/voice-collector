@@ -13,7 +13,7 @@ export default class CherryPick extends Component {
             sentences: [],
             sentenceObject: {},
             submitDisabled: false,
-            submitText: 'Submit',
+            submitText: 'Odeslat',
         };
 
         this.communicator = new Communicator();
@@ -65,11 +65,11 @@ export default class CherryPick extends Component {
     updateButton(status) {
         if (status === 'success') {
             this.setState({
-                submitText: 'Saved, thanks for your contribution!',
+                submitText: 'Uloženo, děkujeme za příspěvek!',
             });
         } else {
             this.setState({
-                submitText: 'Unexpected error occured, try again later',
+                submitText: 'Nastala neočekávaná chyba, zkuste to později',
             });
         }
     }
@@ -117,18 +117,18 @@ export default class CherryPick extends Component {
     render() {
         return(
             <div className="pageContent">
-                <p>This tool will extract sentences appropriate for Common Voice from longer text, like book or article.</p>
-                <p>Only use texts that are Public Domain or under license that is compatible with CC-0.</p>
+                <p>Tento nástroj vybere z delšího souvislého textu, jako například článek nebo kniha, věty vhodné pro Common Voice.</p>
+                <p>Používejte pouze texty dostupné jako volné dílo nebo pod licencí kompatibilní s CC-0.</p>
                 <form onSubmit={this.handleSubmit}>
-                    <textarea rows="10" name="text" placeholder="Text to cherry pick" onChange={(event) => {
+                    <textarea rows="10" name="text" placeholder="Souvislý text" onChange={(event) => {
                         this.setState({text: event.target.value});
                     }}/>
-                    <input type="number" name="limit" placeholder="Sentence limit (default 100)" onChange={(event) => {
+                    <input type="number" name="limit" placeholder="Limit vybraných vět (ve výchozím stavu 100)" onChange={(event) => {
                         this.setState({limit: event.target.value});
                     }}/>
-                    <input type="submit" value="Cherry pick"/>
+                    <input type="submit" value="Vybrat věty"/>
                 </form>
-                <p>Check each sentence. If there is something wrong with it, you can either edit it by clicking on it, or click on the checkmark which will remove the sentence from submitted sentences.</p>
+                <p>Zkontrolujte každou větu. Pokud je s ní něco špatně, můžete ji kliknutím na ni opravit nebo kliknutím na fajfku odebrat z vět určených k odeslání.</p>
                 <div className="sentences">
                     {Object.keys(this.state.sentenceObject).map((objectKey, index) => <Sentence change={this.changeSentence} key={index} objectKey={objectKey} value={this.state.sentenceObject[objectKey]['value']}/>)}
                 </div>
