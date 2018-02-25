@@ -7,7 +7,7 @@ export default class Submit extends Component {
 
         this.state = {
             sentences: [],
-            submitText: 'Submit',
+            submitText: 'Odeslat',
             submitDisabled: false,
         };
 
@@ -44,11 +44,11 @@ export default class Submit extends Component {
     updateButton(status) {
         if (status === 'success') {
             this.setState({
-                submitText: 'Saved, thanks for your contribution!',
+                submitText: 'Uloženo, děkujeme za příspěvek!',
             });
         } else {
             this.setState({
-                submitText: 'Unexpected error occured, try again later',
+                submitText: 'Nastala neočekávaná chyba, zkuste to později',
             });
         }
     }
@@ -56,9 +56,9 @@ export default class Submit extends Component {
     render() {
         return (
             <div className="pageContent">
-                <p>Only use texts that are Public Domain or under license that is compatible with CC-0.</p>
+                <p>Používejte pouze texty dostupné jako volné dílo nebo pod licencí kompatibilní s CC-0.</p>
                 <form onSubmit={this.handleSubmit}>
-                    <textarea rows="10" name="sentences" placeholder="Sentences, one per line" onChange={(event) => {
+                    <textarea rows="10" name="sentences" placeholder="Jedna věta na řádek" onChange={(event) => {
                         this.setState({sentences: event.target.value});
                     }}/>
                     <input disabled={this.state.submitDisabled} type="submit" value={this.state.submitText}/>
