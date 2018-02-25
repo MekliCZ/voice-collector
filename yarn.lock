@@ -2620,6 +2620,17 @@ flatten@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/flatten/-/flatten-1.0.2.tgz#dae46a9d78fbe25292258cc1e780a41d95c03782"
 
+fluent-react@^0.6.1:
+  version "0.6.1"
+  resolved "https://registry.yarnpkg.com/fluent-react/-/fluent-react-0.6.1.tgz#d2bbbca59fa558279befca71b8adf3fc5c709c7a"
+  dependencies:
+    fluent "^0.4.0 || ^0.6.0"
+    prop-types "^15.6.0"
+
+"fluent@^0.4.0 || ^0.6.0":
+  version "0.6.3"
+  resolved "https://registry.yarnpkg.com/fluent/-/fluent-0.6.3.tgz#68a16fb24dae6dd28ec4daec04904c4a0f846610"
+
 for-in@^1.0.1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/for-in/-/for-in-1.0.2.tgz#81068d295a8142ec0ac726c6e2200c30fb6d5e80"
