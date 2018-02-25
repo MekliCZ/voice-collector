@@ -5,6 +5,11 @@ import Footer from './components/Footer';
 import Submit from './pages/Submit';
 import CherryPick from './pages/CherryPick';
 import {Route} from 'react-router';
+import fontawesome from '@fortawesome/fontawesome';
+import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+import { faCheck, faTimes } from '@fortawesome/fontawesome-free-solid';
+
+fontawesome.library.add(faCheck, faTimes);
 
 class App extends Component {
     render() {
