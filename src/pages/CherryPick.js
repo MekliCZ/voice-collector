@@ -118,7 +118,7 @@ export default class CherryPick extends Component {
         return(
             <div className="pageContent">
                 <p>This tool will extract sentences appropriate for Common Voice from longer text, like book or article.</p>
-                <p>Use only texts that are Public Domain or under license that is compatible with CC-0.</p>
+                <p>Only use texts that are Public Domain or under license that is compatible with CC-0.</p>
                 <form onSubmit={this.handleSubmit}>
                     <textarea rows="10" name="text" placeholder="Text to cherry pick" onChange={(event) => {
                         this.setState({text: event.target.value});
