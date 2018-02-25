@@ -3,7 +3,7 @@ import {Component} from 'react';
 export default class Communicator extends Component {
 
     sendData(data, callback) {
-        fetch('/submit', {
+        fetch('/api/submit', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
