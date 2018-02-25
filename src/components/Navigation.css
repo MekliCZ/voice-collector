@@ -5,7 +5,7 @@ nav {
     margin: 10px 0;
 }
 
-a {
+nav a {
     display: block;
     width: 100%;
     text-align: center;
@@ -15,11 +15,11 @@ a {
     border-right: 1px solid black;
 }
 
-a:last-child {
+nav a:last-child {
     border-right: none;
 }
 
-a.active {
+nav a.active {
     background: black;
     color: white;
 }
